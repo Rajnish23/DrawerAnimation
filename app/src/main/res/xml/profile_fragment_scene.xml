@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1500">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/twitter_link"
+               motion:framePosition="50"
+               android:scaleX="2"
+               android:scaleY="2"
+               />
+           <KeyAttribute
+               motion:motionTarget="@+id/github_link"
+               motion:framePosition="50"
+               android:scaleX="2"
+               android:scaleY="2"
+               />
+           <KeyAttribute
+               motion:motionTarget="@+id/stackoverflow_link"
+               motion:framePosition="50"
+               android:scaleX="2"
+               android:scaleY="2"
+               />
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/avatar"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/name"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/avatar"
+            motion:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                motion:attributeName="visibility"
+                motion:customIntegerValue="0x00000008" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/name">
+            <CustomAttribute
+                motion:attributeName="visibility"
+                motion:customIntegerValue="0x00000008" />
+        </Constraint>
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            motion:layout_constraintStart_toEndOf="@id/github"
+            motion:layout_constraintBaseline_toBaselineOf="@+id/github"
+            android:id="@+id/github_link"
+            android:translationX="350dp" />
+        <Constraint
+            android:id="@+id/github"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/github_link"
+            motion:layout_constraintTop_toBottomOf="@id/description"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationX="-100dp" />
+        <Constraint
+            android:id="@+id/stackoverflow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/stackoverflow_link"
+            motion:layout_constraintTop_toBottomOf="@id/github_link"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationX="-150dp" />
+        <Constraint
+            android:id="@+id/twitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/twitter_link"
+            motion:layout_constraintTop_toBottomOf="@id/stackoverflow"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationX="-100dp" />
+        <Constraint
+            android:id="@+id/twitter_link"
+            motion:layout_constraintStart_toEndOf="@id/twitter"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="@id/twitter"
+            android:translationX="350dp" ></Constraint>
+        <Constraint
+            android:id="@+id/stackoverflow_link"
+            motion:layout_constraintStart_toEndOf="@id/stackoverflow"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/github_link"
+            android:translationX="330dp" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/avatar"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                motion:attributeName="alpha"
+                motion:customFloatValue="1" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/name"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/avatar"
+            motion:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                motion:attributeName="visibility"
+                motion:customIntegerValue="0x00000000" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/name">
+            <CustomAttribute
+                motion:attributeName="visibility"
+                motion:customIntegerValue="0x00000000" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

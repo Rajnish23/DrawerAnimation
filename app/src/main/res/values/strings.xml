@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DrawerAnimation</string>
+    <string name="user_name">Rajnish Suryavanshi</string>
+    <string name="description">\"I have been impressed with the urgency of doing.\n Knowing is not enough, we must apply.\n Being willing is not enough, we must do\"\n - Leonardo da Vinci</string>
+    <string name="stackoverflow_link"><u>https://stackoverflow.com/users/7592063</u></string>
+    <string name="github_link"><u>https://github.com/Rajnish23</u></string>
+    <string name="twitter_link"><u>https://twitter.com/Rajnishsuryavan</u></string>
+    <string name="profile_title">Profile</string>
+    <string name="feed_title">Feed</string>
+    <string name="settings_title">Settings</string>
+    <string name="loading_text">Getting Quotes for you !!</string>
+</resources>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_motion_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:padding="10dp"
+    app:layoutDescription="@xml/profile_fragment_scene"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:id="@+id/avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:roundPercent="1.0" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/user_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:textStyle="italic"
+        android:text="@string/description"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+    
+    <TextView
+        android:id="@+id/github"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Github - "
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@id/github_link"
+        app:layout_constraintTop_toBottomOf="@id/description"/>
+
+    <TextView
+        android:id="@+id/github_link"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="end"
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="@string/github_link"
+        app:layout_constraintTop_toTopOf="@id/github"
+        app:layout_constraintStart_toEndOf="@id/github"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/stackoverflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="StackOverflow - "
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@id/stackoverflow_link"
+        app:layout_constraintTop_toBottomOf="@id/github_link"/>
+
+    <TextView
+        android:id="@+id/stackoverflow_link"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="end"
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="@string/stackoverflow_link"
+        app:layout_constraintTop_toBottomOf="@id/github_link"
+        app:layout_constraintStart_toEndOf="@id/stackoverflow"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twitter - "
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@id/twitter_link"
+        app:layout_constraintTop_toBottomOf="@id/stackoverflow"/>
+
+    <TextView
+        android:id="@+id/twitter_link"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="end"
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="@string/twitter_link"
+        app:layout_constraintTop_toTopOf="@id/twitter"
+        app:layout_constraintStart_toEndOf="@id/twitter"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

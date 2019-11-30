@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/feed_start" >
+        <Constraint
+            android:id="@+id/feed_recyclerview"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                motion:attributeName="visibility"
+                motion:customIntegerValue="8" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/quote_logo"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationY="500dp" />
+        <Constraint
+            android:id="@+id/loading_tv"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/quote_logo"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationY="600dp" />
+        <Constraint
+            android:id="@+id/progressBar"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/loading_tv"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationY="700dp" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/feed_loading" >
+        <Constraint
+            android:id="@+id/feed_recyclerview"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                motion:attributeName="visibility"
+                motion:customIntegerValue="8" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/feed_end" >
+        <Constraint
+            android:id="@+id/feed_recyclerview"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                motion:attributeName="visibility"
+                motion:customIntegerValue="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/quote_logo"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationX="300dp" />
+        <Constraint
+            android:id="@+id/progressBar"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/loading_tv"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationX="300dp" />
+        <Constraint
+            android:id="@+id/loading_tv"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/quote_logo"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationX="350dp" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/feed_loading"
+        motion:constraintSetEnd="@+id/feed_end"
+        motion:duration="1500"/>
+    <Transition
+        motion:constraintSetStart="@+id/feed_start"
+        motion:constraintSetEnd="@+id/feed_loading"
+        motion:duration="1000"/>
+</MotionScene>
